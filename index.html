@@ -70,7 +70,7 @@
     /* Sound Control Pill */
     .sound-toggle-btn {
       position: fixed;
-      top: 18px;
+      top: 56px;
       right: 18px;
       z-index: 100;
       background: rgba(11, 17, 32, 0.85);
@@ -1161,9 +1161,713 @@
       font-size: 0.84rem;
       color: var(--text-muted);
     }
+
+    /* ========================================================
+       OPUS 5.5 / FABLE 5.2 ULTRA CRAFT STYLES (2026)
+       ======================================================== */
+    :root {
+      --cyan: #00f2fe;
+      --cyan-glow: rgba(0, 242, 254, 0.4);
+      --gold-bright: #ffd86b;
+      --bg-deep: #040811;
+    }
+
+    #webgl-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.92;
+    }
+
+    /* Top Command Bar (Fable 5.2 Symbolic Bar) */
+    .top-command-bar {
+      background: #080e1a;
+      border-bottom: 1px solid rgba(212, 163, 56, 0.35);
+      padding: 7px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-family: 'JetBrains Mono', 'Consolas', monospace;
+      font-size: 0.76rem;
+      color: #9baec8;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .command-bar-container {
+      max-width: 1380px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .command-bar-left, .command-bar-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .window-dots {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-right: 4px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-red { background: #ff5f56; box-shadow: 0 0 6px rgba(255, 95, 86, 0.6); }
+    .dot-yellow { background: #ffbd2e; box-shadow: 0 0 6px rgba(255, 189, 46, 0.6); }
+    .dot-green { background: #27c93f; box-shadow: 0 0 6px rgba(39, 201, 63, 0.6); }
+
+    .system-status-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .pulse-indicator {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+      animation: pulseGreenAnim 1.8s infinite ease-in-out;
+    }
+
+    .pulse-cyan {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00f2fe;
+      box-shadow: 0 0 8px #00f2fe;
+      animation: pulseGreenAnim 1.8s infinite ease-in-out;
+    }
+
+    @keyframes pulseGreenAnim {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .command-bar-center {
+      flex: 1;
+      max-width: 580px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .command-url-pill {
+      background: #111a2c;
+      border: 1px solid rgba(255, 216, 107, 0.28);
+      border-radius: 20px;
+      padding: 3px 14px;
+      color: #ffd86b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.70rem;
+      letter-spacing: 0.3px;
+      box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100%;
+    }
+
+    .highlight-cyan {
+      color: #00f2fe;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(0, 242, 254, 0.5);
+    }
+
+    .highlight-emerald {
+      color: #10b981;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+    }
+
+    .highlight-gold {
+      color: #ffd86b;
+      font-weight: 700;
+      text-shadow: 0 0 8px rgba(255, 216, 107, 0.5);
+    }
+
+    @media (max-width: 900px) {
+      .command-bar-center { display: none; }
+      .top-command-bar { overflow-x: auto; padding: 6px 10px; }
+      .command-bar-container { width: max-content; gap: 14px; }
+    }
+
+    /* Sculpted Cursor Glow for All Cards */
+    .glow-card, .bento-card, .calculator-card, .agent-unlocked-card, .agent-locked-card, .pricing-card, .affiliate-section-card {
+      position: relative;
+      background: rgba(12, 24, 44, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .glow-card::before, .bento-card::before, .calculator-card::before, .agent-unlocked-card::before, .agent-locked-card::before, .pricing-card::before, .affiliate-section-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      border-radius: inherit;
+      background: radial-gradient(550px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.16), rgba(0, 242, 254, 0.09) 35%, transparent 68%);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .glow-card:hover::before, .bento-card:hover::before, .calculator-card:hover::before, .agent-unlocked-card::before, .agent-locked-card::before, .pricing-card::before, .affiliate-section-card::before {
+      opacity: 1;
+    }
+
+    .glow-card:hover, .bento-card:hover, .pricing-card:hover, .calculator-card:hover {
+      border-color: rgba(0, 242, 254, 0.38);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.65), 0 0 28px rgba(16, 185, 129, 0.12);
+      transform: translateY(-3px);
+    }
+
+    /* WhatsApp Voice Note Audio Bubble Component */
+    .wa-audio-player {
+      background: #111b21;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 460px;
+      user-select: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      position: relative;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .wa-audio-player:hover {
+      border-color: rgba(0, 242, 254, 0.35);
+      box-shadow: 0 8px 28px rgba(0, 242, 254, 0.15);
+    }
+
+    .wa-audio-avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .wa-audio-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00a884, #005c4b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: #fff;
+      box-shadow: 0 0 14px rgba(0, 168, 132, 0.4);
+    }
+
+    .wa-mic-badge {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      background: #10b981;
+      color: #fff;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.65rem;
+      font-weight: 800;
+      border: 2px solid #111b21;
+    }
+
+    .wa-audio-controls {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .wa-audio-main-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .wa-play-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #8696a0;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      flex-shrink: 0;
+    }
+
+    .wa-play-btn:hover {
+      color: #00a884;
+      background: rgba(0, 168, 132, 0.18);
+      border-color: #00a884;
+      transform: scale(1.08);
+    }
+
+    .wa-audio-player.playing .wa-play-btn {
+      color: #00a884;
+      border-color: #00a884;
+      background: rgba(0, 168, 132, 0.2);
+      box-shadow: 0 0 12px rgba(0, 168, 132, 0.35);
+    }
+
+    .wa-waveform-container {
+      flex: 1;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      cursor: pointer;
+      position: relative;
+      padding: 2px 0;
+    }
+
+    .wa-bar {
+      flex: 1;
+      background: #536571;
+      border-radius: 3px;
+      transition: background 0.15s ease, transform 0.12s ease;
+      min-width: 2px;
+    }
+
+    .wa-bar.played {
+      background: #00a884;
+      box-shadow: 0 0 6px rgba(0, 168, 132, 0.4);
+    }
+
+    .wa-audio-player.playing .wa-bar.active-bar {
+      background: #00f2fe;
+      box-shadow: 0 0 8px #00f2fe;
+      animation: barPulse 0.45s infinite alternate ease-in-out;
+    }
+
+    @keyframes barPulse {
+      0% { transform: scaleY(0.75); }
+      100% { transform: scaleY(1.3); }
+    }
+
+    .wa-audio-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.73rem;
+      color: #8696a0;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .wa-audio-badge-mini {
+      font-size: 0.70rem;
+      color: #00f2fe;
+      background: rgba(0, 242, 254, 0.1);
+      padding: 2px 8px;
+      border-radius: 12px;
+      border: 1px solid rgba(0, 242, 254, 0.25);
+    }
+
+    .wa-speed-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      color: #8696a0;
+      padding: 1px 8px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .wa-speed-btn:hover {
+      background: rgba(0, 168, 132, 0.22);
+      color: #00a884;
+      border-color: #00a884;
+    }
+
+    /* Bento Grid Section (Opus 5.5 / Fable 5.2 Ultra Craft) */
+    .bento-section {
+      padding: 85px 0;
+      position: relative;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .bento-col-span-2 {
+      grid-column: span 2;
+    }
+
+    .bento-col-span-1 {
+      grid-column: span 1;
+    }
+
+    .bento-card {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .bento-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid rgba(0, 242, 254, 0.25);
+      color: #00f2fe;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      width: fit-content;
+      margin-bottom: 16px;
+    }
+
+    .bento-card-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .bento-card-desc {
+      font-size: 0.92rem;
+      color: #94a3b8;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .bento-voice-preview {
+      background: rgba(6, 12, 24, 0.75);
+      border: 1px solid rgba(0, 242, 254, 0.25);
+      border-radius: 14px;
+      padding: 14px;
+      margin: 14px 0 20px;
+    }
+
+    .voice-preview-header {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.70rem;
+      color: #ffd86b;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .live-dot-cyan {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #00f2fe;
+      box-shadow: 0 0 8px #00f2fe;
+      animation: pulseGreenAnim 1.4s infinite;
+    }
+
+    .bento-metrics-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .bento-metric-pill {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .metric-num {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: #10b981;
+    }
+
+    .metric-txt {
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    .latency-visual-box {
+      background: rgba(6, 12, 24, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .latency-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.76rem;
+    }
+
+    .bar-label {
+      width: 95px;
+      color: #94a3b8;
+      flex-shrink: 0;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bar-fill.human {
+      height: 100%;
+      background: #ef4444;
+      border-radius: 4px;
+    }
+
+    .bar-fill.robot {
+      height: 100%;
+      background: #10b981;
+      border-radius: 4px;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    .bar-time {
+      width: 55px;
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+    }
+
+    .bar-time.highlight {
+      color: #10b981;
+    }
+
+    .pix-badge-visual {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .pix-key-pill code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #10b981;
+      word-break: break-all;
+      display: block;
+    }
+
+    .pix-status-chip {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #34d399;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .upsell-demo-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(6, 12, 24, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .upsell-step {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    .upsell-step.active {
+      color: #ffd86b;
+      font-weight: 700;
+    }
+
+    .upsell-step.success {
+      color: #10b981;
+      font-weight: 800;
+    }
+
+    .step-num {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+
+    .upsell-step.active .step-num {
+      background: #ffd86b;
+      color: #060911;
+    }
+
+    .upsell-step.success .step-num {
+      background: #10b981;
+      color: #060911;
+    }
+
+    .upsell-arrow {
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .pause-tag-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      color: #fca5a5;
+      font-weight: 600;
+      margin-top: auto;
+    }
+
+    .platforms-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .platform-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    @media (max-width: 960px) {
+      .bento-grid {
+        grid-template-columns: 1fr;
+      }
+      .bento-col-span-2, .bento-col-span-1 {
+        grid-column: span 1;
+      }
+      .bento-metrics-row {
+        grid-template-columns: 1fr;
+      }
+      .upsell-demo-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
   </style>
+
+  <!-- GSAP 3.12.5 & Lenis Smooth Scroll (Opus 5.5 / Fable 5.2 Ultra Craft) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 </head>
 <body>
+  <!-- WebGL GLSL Interactive Background Canvas (Opus 5.5 / Fable 5.2 Shader) -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Top Command Bar (Fable 5.2 Symbolic Bar) -->
+  <div class="top-command-bar">
+    <div class="command-bar-container">
+      <div class="command-bar-left">
+        <div class="window-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="system-status-item">
+          <span class="pulse-indicator"></span>
+          <span class="system-label">GPN 20.8 ENGINE:</span>
+          <span class="system-val highlight-emerald">ONLINE</span>
+        </div>
+        <div class="system-status-item">
+          <span class="pulse-cyan"></span>
+          <span class="system-label">🎙️ VOZ HUMANA ELEVENLABS:</span>
+          <span class="system-val highlight-cyan">ATIVA (v4 Multilingual)</span>
+        </div>
+      </div>
+
+      <div class="command-bar-center">
+        <div class="command-url-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>gpn://autonomous.sales/protocol.v20.8?neural_voice=elevenlabs&amp;payout=pix_instant</span>
+        </div>
+      </div>
+
+      <div class="command-bar-right">
+        <div class="system-status-item">
+          <span class="system-label">⚡ LATÊNCIA:</span>
+          <span class="system-val highlight-emerald">0.8s</span>
+        </div>
+        <div class="system-status-item">
+          <span class="system-label">💸 AFILIADO:</span>
+          <span class="system-val highlight-gold">60% PIX</span>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Audio Unlock / Sound Toggle -->
   <button class="sound-toggle-btn" id="soundToggleBtn" onclick="toggleSound()">
@@ -1230,6 +1934,84 @@
           <a href="https://pay.cakto.com.br/usn7b6r_1308235" target="_blank" rel="noopener" style="display: block; border-radius: 16px; overflow: hidden; border: 1px solid rgba(245, 158, 11, 0.45); box-shadow: 0 12px 30px rgba(0,0,0,0.5);">
             <img src="assets/capa-maquina-pix-ia-ultra-2026.jpg" alt="Máquina de PIX com IA 15 Agentes" style="width: 100%; height: 100%; max-height: 175px; object-fit: cover; display: block;" />
           </a>
+        </div>
+      </div>
+
+      <!-- WhatsApp Real Human Audio Showcase (Hero) -->
+      <div class="hero-audio-card glow-card" style="margin: 28px auto 0; max-width: 960px; padding: 20px 24px; background: rgba(11, 20, 34, 0.9); border: 1px solid rgba(0, 242, 254, 0.35); border-radius: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.6);">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span class="badge-pill" style="margin: 0; padding: 4px 12px; font-size: 0.75rem; background: rgba(0, 242, 254, 0.15); border-color: rgba(0, 242, 254, 0.4); color: #00f2fe;">
+              <span class="pulse-cyan" style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#00f2fe; box-shadow:0 0 8px #00f2fe; margin-right:4px;"></span>
+              VOZ HUMANA REAL ELEVENLABS
+            </span>
+            <span style="font-size: 0.95rem; font-weight: 800; color: #fff;">
+              Ouça o Robô Fechando Uma Venda no WhatsApp (Áudio Real de 12s):
+            </span>
+          </div>
+          <span style="font-size: 0.78rem; font-family: 'JetBrains Mono', monospace; color: var(--gold-bright); background: rgba(245, 158, 11, 0.12); border: 1px solid rgba(245, 158, 11, 0.3); padding: 4px 10px; border-radius: 20px;">
+            🎙️ ElevenLabs v4 Multilingual • Upsell + PIX
+          </span>
+        </div>
+
+        <!-- Official WhatsApp Voice Note Player Component -->
+        <div class="wa-audio-player hero-player" data-player-id="hero-audio" style="max-width: 100%;">
+          <div class="wa-audio-avatar-wrap">
+            <div class="wa-audio-avatar">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+            </div>
+            <span class="wa-mic-badge">✓</span>
+          </div>
+          <div class="wa-audio-controls">
+            <div class="wa-audio-main-row">
+              <button class="wa-play-btn" type="button" aria-label="Play áudio ElevenLabs" onclick="toggleWaAudio(this)">
+                <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <svg class="pause-icon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+              </button>
+              <div class="wa-waveform-container" onclick="seekWaAudio(event, this)">
+                <div class="wa-waveform-bars" style="display:flex; width:100%; height:100%; align-items:center; gap:3px;">
+                  <span class="wa-bar" style="height:35%"></span>
+                  <span class="wa-bar" style="height:55%"></span>
+                  <span class="wa-bar" style="height:75%"></span>
+                  <span class="wa-bar" style="height:40%"></span>
+                  <span class="wa-bar" style="height:85%"></span>
+                  <span class="wa-bar" style="height:95%"></span>
+                  <span class="wa-bar" style="height:65%"></span>
+                  <span class="wa-bar" style="height:50%"></span>
+                  <span class="wa-bar" style="height:80%"></span>
+                  <span class="wa-bar" style="height:100%"></span>
+                  <span class="wa-bar" style="height:85%"></span>
+                  <span class="wa-bar" style="height:60%"></span>
+                  <span class="wa-bar" style="height:45%"></span>
+                  <span class="wa-bar" style="height:70%"></span>
+                  <span class="wa-bar" style="height:90%"></span>
+                  <span class="wa-bar" style="height:65%"></span>
+                  <span class="wa-bar" style="height:50%"></span>
+                  <span class="wa-bar" style="height:75%"></span>
+                  <span class="wa-bar" style="height:90%"></span>
+                  <span class="wa-bar" style="height:100%"></span>
+                  <span class="wa-bar" style="height:80%"></span>
+                  <span class="wa-bar" style="height:55%"></span>
+                  <span class="wa-bar" style="height:40%"></span>
+                  <span class="wa-bar" style="height:70%"></span>
+                  <span class="wa-bar" style="height:85%"></span>
+                  <span class="wa-bar" style="height:95%"></span>
+                  <span class="wa-bar" style="height:60%"></span>
+                  <span class="wa-bar" style="height:45%"></span>
+                  <span class="wa-bar" style="height:70%"></span>
+                  <span class="wa-bar" style="height:50%"></span>
+                  <span class="wa-bar" style="height:35%"></span>
+                  <span class="wa-bar" style="height:25%"></span>
+                </div>
+              </div>
+            </div>
+            <div class="wa-audio-footer-row">
+              <span class="wa-audio-time">0:12</span>
+              <span class="wa-audio-badge-mini">🎙️ Voz Humana Real (ElevenLabs v4/Multilingual)</span>
+              <button class="wa-speed-btn" type="button" onclick="cycleWaSpeed(this)">1x</button>
+            </div>
+          </div>
+          <audio class="wa-native-audio" preload="metadata" src="assets/audio-ia-loja-elevenlabs.mp3"></audio>
         </div>
       </div>
     </div>
@@ -1307,6 +2089,194 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
             </button>
           </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: Asymmetric Bento Grid (Opus 5.5 / Fable 5.2 Ultra Craft) -->
+  <section id="bento-architecture" class="bento-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ARQUITETURA DE ESCALA FABLE 5.2 • OPUS 5.5 CRAFT</span>
+        <h2 class="section-title">A Anatomia do Robô que Vende 24 Horas Sozinho</h2>
+        <p class="section-desc">
+          Engenharia de precisão para eliminar 100% dos atritos entre a curiosidade do cliente e o dinheiro caindo no seu PIX.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Card 1 (Span 2 / Featured): ElevenLabs Neural Voice -->
+        <div class="bento-card bento-col-span-2 glow-card">
+          <div>
+            <div class="bento-card-badge">🎙️ ELEVENLABS v4 MULTILINGUAL</div>
+            <h3 class="bento-card-title">Voz Neural Humana com Entonação Brasileira</h3>
+            <p class="bento-card-desc">
+              Clientes odeiam robôs mecânicos. O GPN 20.8 integra o modelo neural de voz humana da ElevenLabs v4, reproduzindo pausas naturais, calor de acolhimento e entonação de vendedor de elite. A taxa de escuta e conversão de áudios no WhatsApp ultrapassa 94%.
+            </p>
+
+            <!-- Interactive mini waveform preview inside card -->
+            <div class="bento-voice-preview">
+              <div class="voice-preview-header">
+                <span class="live-dot-cyan"></span>
+                <span>AMOSTRA DE SÍNTESE NEURAL (CLONAGEM ULTRA REALISTA)</span>
+              </div>
+              <!-- Mini player inside bento -->
+              <div class="wa-audio-player" style="max-width:100%; background:rgba(6,12,24,0.7); border-color:rgba(0,242,254,0.25);">
+                <div class="wa-audio-avatar-wrap">
+                  <div class="wa-audio-avatar" style="width:36px; height:36px; font-size:1rem;">🎙️</div>
+                </div>
+                <div class="wa-audio-controls">
+                  <div class="wa-audio-main-row">
+                    <button class="wa-play-btn" type="button" aria-label="Play áudio ElevenLabs" onclick="toggleWaAudio(this)">
+                      <svg class="play-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                      <svg class="pause-icon" style="display:none;" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+                    </button>
+                    <div class="wa-waveform-container" onclick="seekWaAudio(event, this)">
+                      <div class="wa-waveform-bars" style="display:flex; width:100%; height:100%; align-items:center; gap:3px;">
+                        <span class="wa-bar" style="height:40%"></span>
+                        <span class="wa-bar" style="height:60%"></span>
+                        <span class="wa-bar" style="height:80%"></span>
+                        <span class="wa-bar" style="height:50%"></span>
+                        <span class="wa-bar" style="height:90%"></span>
+                        <span class="wa-bar" style="height:70%"></span>
+                        <span class="wa-bar" style="height:100%"></span>
+                        <span class="wa-bar" style="height:65%"></span>
+                        <span class="wa-bar" style="height:45%"></span>
+                        <span class="wa-bar" style="height:75%"></span>
+                        <span class="wa-bar" style="height:90%"></span>
+                        <span class="wa-bar" style="height:60%"></span>
+                        <span class="wa-bar" style="height:40%"></span>
+                        <span class="wa-bar" style="height:70%"></span>
+                        <span class="wa-bar" style="height:85%"></span>
+                        <span class="wa-bar" style="height:50%"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wa-audio-footer-row">
+                    <span class="wa-audio-time">0:12</span>
+                    <span class="wa-audio-badge-mini">Voz Clonada Oficial</span>
+                    <button class="wa-speed-btn" type="button" onclick="cycleWaSpeed(this)">1x</button>
+                  </div>
+                </div>
+                <audio class="wa-native-audio" preload="metadata" src="assets/audio-ia-loja-elevenlabs.mp3"></audio>
+              </div>
+            </div>
+          </div>
+
+          <div class="bento-metrics-row">
+            <div class="bento-metric-pill">
+              <span class="metric-num">94.2%</span>
+              <span class="metric-txt">Taxa de Escuta Completa</span>
+            </div>
+            <div class="bento-metric-pill">
+              <span class="metric-num">&lt; 1.2s</span>
+              <span class="metric-txt">Tempo de Síntese Neural</span>
+            </div>
+            <div class="bento-metric-pill">
+              <span class="metric-num">0%</span>
+              <span class="metric-txt">Sensação de Robô Frio</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 (Span 1): Latência 0.8s -->
+        <div class="bento-card bento-col-span-1 glow-card">
+          <div>
+            <div class="bento-card-badge">⚡ RESPOSTA HIPER-RÁPIDA</div>
+            <h3 class="bento-card-title">0.8s: Zero Vácuo no Cliente</h3>
+            <p class="bento-card-desc">
+              73% dos clientes compram do primeiro que responde no WhatsApp. Enquanto humanos demoram 15 a 45 minutos (ou dormem de madrugada), o robô atende no ápice do impulso de compra.
+            </p>
+          </div>
+          <div class="latency-visual-box">
+            <div class="latency-bar">
+              <span class="bar-label">Humano Médio</span>
+              <div class="bar-track"><div class="bar-fill human" style="width:90%"></div></div>
+              <span class="bar-time">32 min</span>
+            </div>
+            <div class="latency-bar">
+              <span class="bar-label">Robô GPN 20.8</span>
+              <div class="bar-track"><div class="bar-fill robot" style="width:4%"></div></div>
+              <span class="bar-time highlight">0.8s ⚡</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 (Span 1): PIX EMV Instantâneo -->
+        <div class="bento-card bento-col-span-1 glow-card">
+          <div>
+            <div class="bento-card-badge">💸 BACEN HOMOLOGADO</div>
+            <h3 class="bento-card-title">PIX Copia e Cola EMV Dinâmico</h3>
+            <p class="bento-card-desc">
+              Elimina o erro de digitação de chaves. A IA gera a string oficial do Banco Central com valor exato. O cliente copia em 1 toque e aprova a compra no app do banco em segundos.
+            </p>
+          </div>
+          <div class="pix-badge-visual">
+            <div class="pix-key-pill">
+              <code>00020126580014br.gov.bcb.pix...</code>
+            </div>
+            <span class="pix-status-chip">✓ Baixa Automática em 3s</span>
+          </div>
+        </div>
+
+        <!-- Card 4 (Span 2): Upsell de Dopamina (+34%) -->
+        <div class="bento-card bento-col-span-2 glow-card">
+          <div>
+            <div class="bento-card-badge">🧠 NEURO-VENDAS</div>
+            <h3 class="bento-card-title">Upsell Psicológico de Dopamina (+34% Ticket Médio)</h3>
+            <p class="bento-card-desc">
+              O robô nunca encerra a conversa sem oferecer um incremento de alto valor e baixo custo no momento em que a dopamina do cliente está no auge. Uma pizza ganha borda vulcão (+R$ 12,90); uma conta de game ganha anti-ban vitalício (+R$ 19,90); um infoproduto ganha suporte VIP (+R$ 29,90).
+            </p>
+          </div>
+          <div class="upsell-demo-strip">
+            <div class="upsell-step">
+              <span class="step-num">1</span>
+              <span>Pedido Base (R$ 49,90)</span>
+            </div>
+            <div class="upsell-arrow">➔</div>
+            <div class="upsell-step active">
+              <span class="step-num">2</span>
+              <span>Oferta VIP no Timing (+R$ 19,90)</span>
+            </div>
+            <div class="upsell-arrow">➔</div>
+            <div class="upsell-step success">
+              <span class="step-num">3</span>
+              <span>PIX Gerado: R$ 69,80 (+40% Lucro)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 (Span 1): Pausa Humana Inteligente -->
+        <div class="bento-card bento-col-span-1 glow-card">
+          <div>
+            <div class="bento-card-badge">🛑 ZERO CONFLITO</div>
+            <h3 class="bento-card-title">Pausa Humana Inteligente</h3>
+            <p class="bento-card-desc">
+              Você ou sua equipe mandaram mensagem no WhatsApp do cliente? O robô detecta a digitação humana e silencia na mesma hora. Ele só reassume se você autorizar.
+            </p>
+          </div>
+          <div class="pause-tag-pill">
+            <span>🔒</span>
+            <span>Detecção Ativa de Transbordo Humano</span>
+          </div>
+        </div>
+
+        <!-- Card 6 (Span 2): Soberania Total & Sem Mensalidades -->
+        <div class="bento-card bento-col-span-2 glow-card">
+          <div>
+            <div class="bento-card-badge">💎 SOBERANIA TOTAL</div>
+            <h3 class="bento-card-title">Zero Mensalidades • Funciona no Celular ou PC com IAs 100% Grátis</h3>
+            <p class="bento-card-desc">
+              Chega de pagar ferramentas caras que cobram R$ 297 a R$ 697 todo mês. O GPN 20.8 conecta direto nas APIs gratuitas do <strong>Google Gemini 2.5 Flash</strong>, <strong>Groq</strong> (1.000 tokens/s) ou <strong>ChatGPT</strong>. Roda liso no seu Windows, Mac, Linux ou direto no seu celular Android via Termux.
+            </p>
+          </div>
+          <div class="platforms-badges">
+            <span class="platform-chip">⚡ Google Gemini 2.5 Flash (Grátis)</span>
+            <span class="platform-chip">🚀 Groq Llama 3.3 (Grátis)</span>
+            <span class="platform-chip">📱 Android / Termux</span>
+            <span class="platform-chip">💻 Windows / Mac / Linux</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1851,6 +2821,7 @@ Regras de conduta:
         status: 'Online • Responde em 0.8s (IA GPN 20.8)',
         initialBotMsg: 'Olá! Bem-vindo à Dom Bosco Express 🍕 Nosso atendimento é 100% automatizado por IA 24h. Como posso te atender hoje? Quer conferir as pizzas mais pedidas ou nosso combo com refrigerante grátis?',
         chips: [
+          '🎙️ Me manda um áudio explicando!',
           'Qual o cardápio e promoções de hoje?',
           'Quero pizza de Calabresa Especial',
           'Tá caro, tem algum desconto no PIX?',
@@ -1885,6 +2856,7 @@ Regras de conduta:
         status: 'Online • Entrega Automática 24h via IA',
         initialBotMsg: 'Salve gamer! ⚡ O Robô Nexus entrega contas e itens de Valorant, LoL, Fortnite, Steam e Roblox em menos de 10 segundos no PIX. O que você procura hoje?',
         chips: [
+          '🎙️ Me manda um áudio explicando!',
           'Tem conta de Valorant c/ Kuronami / Vandal?',
           'Como funciona a entrega imediata?',
           'Aceita PIX com desconto agora?',
@@ -1917,6 +2889,7 @@ Regras de conduta:
         status: 'Online • Agendamento IA 24h Confirmado',
         initialBotMsg: 'Olá! Sou a assistente inteligente do Studio Belle 💇‍♂️✨ Posso agendar seu horário hoje mesmo, verificar preços e reservar seu atendimento exclusivo. O que gostaria de fazer?',
         chips: [
+          '🎙️ Me manda um áudio explicando!',
           'Quais horários livres para hoje/amanhã?',
           'Quanto custa Corte Degradê + Barboterapia?',
           'Como funciona o Clube de Assinatura Mensal?',
@@ -1951,6 +2924,7 @@ Regras de conduta:
         status: 'Online • Gerador de PIX em 24h Ativo',
         initialBotMsg: 'Fala futuro milionário! 💰 O Robô de IA está pronto para colocar comissões diárias de R$ 50 a R$ 300 no seu bolso usando IAs 100% gratuitas. Como posso acelerar seu resultado hoje?',
         chips: [
+          '🎙️ Me manda um áudio explicando!',
           'Como funciona a Máquina de Fazer PIX?',
           'Iniciante sem experiência consegue aplicar?',
           'Qual é a garantia e como recebo o acesso?',
@@ -2079,6 +3053,15 @@ Regras de conduta:
       typing.style.display = 'inline-flex';
       const chatBody = document.getElementById('chatBody');
       chatBody.scrollTop = chatBody.scrollHeight;
+
+      // Handle Audio request
+      if (text.toLowerCase().includes('áudio') || text.toLowerCase().includes('audio')) {
+        setTimeout(() => {
+          typing.style.display = 'none';
+          sendBotAudioReply();
+        }, 750);
+        return;
+      }
 
       // Smart Reply Logic
       setTimeout(() => {
@@ -2257,8 +3240,481 @@ Regras de conduta:
       elem.classList.toggle('active');
     }
 
+
+    /* ========================================================
+       OPUS 5.5 / FABLE 5.2 AUDIO & VISUAL RUNTIME ENGINES
+       ======================================================== */
+
+    // WhatsApp Audio Bubble Generator HTML Helper
+    function createWaAudioBubbleHtml(datasetOpts = '') {
+      return `
+        <div class="wa-audio-player" ${datasetOpts}>
+          <div class="wa-audio-avatar-wrap">
+            <div class="wa-audio-avatar">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/><path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+            </div>
+            <span class="wa-mic-badge">✓</span>
+          </div>
+          <div class="wa-audio-controls">
+            <div class="wa-audio-main-row">
+              <button class="wa-play-btn" type="button" aria-label="Play áudio ElevenLabs" onclick="toggleWaAudio(this)">
+                <svg class="play-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                <svg class="pause-icon" style="display:none;" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+              </button>
+              <div class="wa-waveform-container" onclick="seekWaAudio(event, this)">
+                <div class="wa-waveform-bars" style="display:flex; width:100%; height:100%; align-items:center; gap:3px;">
+                  <span class="wa-bar" style="height:35%"></span>
+                  <span class="wa-bar" style="height:55%"></span>
+                  <span class="wa-bar" style="height:75%"></span>
+                  <span class="wa-bar" style="height:40%"></span>
+                  <span class="wa-bar" style="height:85%"></span>
+                  <span class="wa-bar" style="height:95%"></span>
+                  <span class="wa-bar" style="height:65%"></span>
+                  <span class="wa-bar" style="height:50%"></span>
+                  <span class="wa-bar" style="height:80%"></span>
+                  <span class="wa-bar" style="height:100%"></span>
+                  <span class="wa-bar" style="height:85%"></span>
+                  <span class="wa-bar" style="height:60%"></span>
+                  <span class="wa-bar" style="height:45%"></span>
+                  <span class="wa-bar" style="height:70%"></span>
+                  <span class="wa-bar" style="height:90%"></span>
+                  <span class="wa-bar" style="height:65%"></span>
+                  <span class="wa-bar" style="height:50%"></span>
+                  <span class="wa-bar" style="height:75%"></span>
+                  <span class="wa-bar" style="height:90%"></span>
+                  <span class="wa-bar" style="height:100%"></span>
+                  <span class="wa-bar" style="height:80%"></span>
+                  <span class="wa-bar" style="height:55%"></span>
+                  <span class="wa-bar" style="height:40%"></span>
+                  <span class="wa-bar" style="height:70%"></span>
+                  <span class="wa-bar" style="height:85%"></span>
+                  <span class="wa-bar" style="height:95%"></span>
+                  <span class="wa-bar" style="height:60%"></span>
+                  <span class="wa-bar" style="height:45%"></span>
+                  <span class="wa-bar" style="height:70%"></span>
+                  <span class="wa-bar" style="height:50%"></span>
+                  <span class="wa-bar" style="height:35%"></span>
+                  <span class="wa-bar" style="height:25%"></span>
+                </div>
+              </div>
+            </div>
+            <div class="wa-audio-footer-row">
+              <span class="wa-audio-time">0:12</span>
+              <span class="wa-audio-badge-mini">🎙️ ElevenLabs v4</span>
+              <button class="wa-speed-btn" type="button" onclick="cycleWaSpeed(this)">1x</button>
+            </div>
+          </div>
+          <audio class="wa-native-audio" preload="metadata" src="assets/audio-ia-loja-elevenlabs.mp3"></audio>
+        </div>
+      `;
+    }
+
+    // Toggle Play/Pause for any WhatsApp audio player
+    function toggleWaAudio(btn) {
+      const player = btn.closest('.wa-audio-player');
+      const audio = player.querySelector('audio');
+      
+      if (audio.paused) {
+        // Pause all other wa audio players
+        document.querySelectorAll('.wa-audio-player audio').forEach(a => {
+          if (a !== audio && !a.paused) {
+            a.pause();
+            const p = a.closest('.wa-audio-player');
+            if (p) {
+              p.classList.remove('playing');
+              const pBtn = p.querySelector('.wa-play-btn');
+              if (pBtn) {
+                pBtn.querySelector('.play-icon').style.display = 'block';
+                pBtn.querySelector('.pause-icon').style.display = 'none';
+              }
+            }
+          }
+        });
+
+        audio.play().then(() => {
+          player.classList.add('playing');
+          btn.querySelector('.play-icon').style.display = 'none';
+          btn.querySelector('.pause-icon').style.display = 'block';
+        }).catch(err => console.warn('Audio play prevented:', err));
+      } else {
+        audio.pause();
+        player.classList.remove('playing');
+        btn.querySelector('.play-icon').style.display = 'block';
+        btn.querySelector('.pause-icon').style.display = 'none';
+      }
+    }
+
+    // Seek in waveform
+    function seekWaAudio(e, container) {
+      const player = container.closest('.wa-audio-player');
+      const audio = player.querySelector('audio');
+      const rect = container.getBoundingClientRect();
+      const clickX = e.clientX - rect.left;
+      const ratio = Math.max(0, Math.min(1, clickX / rect.width));
+      const dur = audio.duration || 12.5;
+      audio.currentTime = ratio * dur;
+    }
+
+    // Cycle playback rate (1x -> 1.5x -> 2x)
+    function cycleWaSpeed(btn) {
+      const player = btn.closest('.wa-audio-player');
+      const audio = player.querySelector('audio');
+      const rates = [1, 1.5, 2];
+      let curRate = audio.playbackRate || 1;
+      let nextIdx = (rates.indexOf(curRate) + 1) % rates.length;
+      let newRate = rates[nextIdx];
+      audio.playbackRate = newRate;
+      btn.textContent = `${newRate}x`;
+      playClickChime();
+    }
+
+    // Wire up events for a WhatsApp Audio player instance
+    function initWaPlayer(player) {
+      if (!player || player.dataset.initialized === 'true') return;
+      player.dataset.initialized = 'true';
+
+      const audio = player.querySelector('audio');
+      const timeEl = player.querySelector('.wa-audio-time');
+      const bars = player.querySelectorAll('.wa-bar');
+      const btn = player.querySelector('.wa-play-btn');
+
+      audio.addEventListener('timeupdate', () => {
+        const cur = audio.currentTime;
+        const dur = audio.duration || 12.5;
+        const ratio = Math.min(1, cur / dur);
+        
+        const m = Math.floor(cur / 60);
+        const s = Math.floor(cur % 60);
+        if (timeEl) {
+          timeEl.textContent = `${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        const currentBarIdx = Math.floor(ratio * bars.length);
+        bars.forEach((bar, idx) => {
+          if (idx <= currentBarIdx) {
+            bar.classList.add('played');
+            if (idx === currentBarIdx && !audio.paused) {
+              bar.classList.add('active-bar');
+            } else {
+              bar.classList.remove('active-bar');
+            }
+          } else {
+            bar.classList.remove('played');
+            bar.classList.remove('active-bar');
+          }
+        });
+      });
+
+      audio.addEventListener('ended', () => {
+        player.classList.remove('playing');
+        if (btn) {
+          btn.querySelector('.play-icon').style.display = 'block';
+          btn.querySelector('.pause-icon').style.display = 'none';
+        }
+        bars.forEach(b => {
+          b.classList.remove('active-bar');
+        });
+        if (timeEl) {
+          timeEl.textContent = '0:12';
+        }
+        
+        // Chat Followup Trigger if sent inside WhatsApp simulator
+        if (player.dataset.onended === 'chat-followup') {
+          setTimeout(() => {
+            appendReceivedMessage(
+              'Gostou da naturalidade da voz? A IA conduz o cliente com essa mesma autoridade até o fechamento. Quer que eu reserve o robô vitalício pra você agora?',
+              '🚀 OFERTA VIP: Leve a Licença Vitalícia por R$ 97 no PIX ou os 15 Agentes por R$ 37!',
+              'R$ 97,00',
+              '00020126580014br.gov.bcb.pix0136gpnloja208@cakto.com520400005303986540597.005802BR5915CAKTO GPN LOJA6009SAO PAULO62070503***6304D189'
+            );
+          }, 700);
+        }
+      });
+    }
+
+    // Function to send audio reply inside WhatsApp simulator
+    function sendBotAudioReply() {
+      const chatBody = document.getElementById('chatBody');
+      const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const msgDiv = document.createElement('div');
+      msgDiv.className = 'message received wa-audio-bubble-msg';
+      msgDiv.innerHTML = `
+        <div style="font-weight:700; color:var(--emerald-light); font-size:0.86rem; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/></svg>
+          Atendente IA (Voz Humana ElevenLabs):
+        </div>
+        <div style="font-size:0.88rem; margin-bottom:10px; color:#e2e8f0;">
+          Com certeza! Escuta esse áudio de 12 segundos gravado com a nossa voz neural que explica a entrega e já fecha o pedido com você:
+        </div>
+        ${createWaAudioBubbleHtml('data-onended="chat-followup"')}
+        <div class="message-time">${time}</div>
+      `;
+      chatBody.appendChild(msgDiv);
+      chatBody.scrollTop = chatBody.scrollHeight;
+
+      const player = msgDiv.querySelector('.wa-audio-player');
+      initWaPlayer(player);
+
+      // Auto-play the audio since user clicked the audio chip
+      setTimeout(() => {
+        const playBtn = player.querySelector('.wa-play-btn');
+        if (playBtn) {
+          toggleWaAudio(playBtn);
+        }
+      }, 350);
+    }
+
+    /* WebGL Background Shader Engine */
+    function initWebGLEngine() {
+      const canvas = document.getElementById('webgl-canvas');
+      if (!canvas) return;
+
+      function resize() {
+        const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+        canvas.width = window.innerWidth * dpr;
+        canvas.height = window.innerHeight * dpr;
+      }
+      window.addEventListener('resize', resize);
+      resize();
+
+      let gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      if (!gl) {
+        init2DFallback(canvas);
+        return;
+      }
+
+      const vsSource = `
+        attribute vec2 a_pos;
+        void main() {
+          gl_Position = vec4(a_pos, 0.0, 1.0);
+        }
+      `;
+
+      const fsSource = `
+        precision highp float;
+        uniform vec2 u_resolution;
+        uniform float u_time;
+        uniform vec2 u_mouse;
+
+        void main() {
+          vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+          vec2 mouse = u_mouse / u_resolution.xy;
+
+          float aspect = u_resolution.x / u_resolution.y;
+          vec2 p = uv;
+          p.x *= aspect;
+          vec2 m = mouse;
+          m.x *= aspect;
+
+          float dist = length(p - m);
+          float mouseWave = sin(dist * 9.0 - u_time * 2.8) * exp(-dist * 2.5) * 0.16;
+
+          float t = u_time * 0.28;
+          float w1 = sin(p.x * 2.8 + t + mouseWave) * cos(p.y * 2.2 - t);
+          float w2 = sin(p.x * 4.2 - t * 1.2 + w1 * 0.5) * cos(p.y * 3.6 + t * 0.8);
+          float w3 = sin((p.x + p.y) * 3.4 + t * 0.9 + w2 * 0.4);
+
+          float energy = (w1 + w2 * 0.8 + w3 * 0.5) * 0.5 + 0.5;
+
+          // Obsidian base: #040811
+          vec3 bg = vec3(0.016, 0.031, 0.067);
+          // Emerald: #10b981
+          vec3 emerald = vec3(0.063, 0.725, 0.506);
+          // Cyan: #00f2fe
+          vec3 cyan = vec3(0.0, 0.949, 0.996);
+          // Liquid Gold: #ffd86b
+          vec3 gold = vec3(1.0, 0.847, 0.420);
+
+          float emMix = smoothstep(0.40, 0.82, energy + (1.0 - uv.y) * 0.22);
+          float cyMix = smoothstep(0.55, 0.90, energy + (uv.x * 0.25));
+          float gdMix = smoothstep(0.70, 0.98, energy + mouseWave * 1.3);
+
+          vec3 col = bg;
+          col = mix(col, emerald * 0.24, emMix);
+          col = mix(col, cyan * 0.30, cyMix);
+          col = mix(col, gold * 0.36, gdMix);
+
+          float vignette = smoothstep(1.35, 0.25, length(uv - 0.5));
+          col *= vignette;
+
+          gl_FragColor = vec4(col, 0.88);
+        }
+      `;
+
+      function createShader(gl, type, source) {
+        const s = gl.createShader(type);
+        gl.shaderSource(s, source);
+        gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+          gl.deleteShader(s);
+          return null;
+        }
+        return s;
+      }
+
+      const vs = createShader(gl, gl.VERTEX_SHADER, vsSource);
+      const fs = createShader(gl, gl.FRAGMENT_SHADER, fsSource);
+      if (!vs || !fs) {
+        init2DFallback(canvas);
+        return;
+      }
+
+      const prog = gl.createProgram();
+      gl.attachShader(prog, vs);
+      gl.attachShader(prog, fs);
+      gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) {
+        init2DFallback(canvas);
+        return;
+      }
+
+      const posBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([
+        -1, -1,
+         1, -1,
+        -1,  1,
+        -1,  1,
+         1, -1,
+         1,  1
+      ]), gl.STATIC_DRAW);
+
+      const aPos = gl.getAttribLocation(prog, 'a_pos');
+      const uRes = gl.getUniformLocation(prog, 'u_resolution');
+      const uTime = gl.getUniformLocation(prog, 'u_time');
+      const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+      let curMouse = { x: window.innerWidth * 0.5, y: window.innerHeight * 0.5 };
+      let targetMouse = { x: window.innerWidth * 0.5, y: window.innerHeight * 0.5 };
+
+      window.addEventListener('pointermove', (e) => {
+        targetMouse.x = e.clientX;
+        targetMouse.y = e.clientY;
+      });
+
+      const startTime = performance.now();
+
+      function render() {
+        curMouse.x += (targetMouse.x - curMouse.x) * 0.05;
+        curMouse.y += (targetMouse.y - curMouse.y) * 0.05;
+
+        gl.viewport(0, 0, canvas.width, canvas.height);
+        gl.useProgram(prog);
+
+        gl.enableVertexAttribArray(aPos);
+        gl.bindBuffer(gl.ARRAY_BUFFER, posBuffer);
+        gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
+
+        const now = (performance.now() - startTime) * 0.001;
+        gl.uniform2f(uRes, canvas.width, canvas.height);
+        gl.uniform1f(uTime, now);
+        gl.uniform2f(uMouse, curMouse.x * (canvas.width / window.innerWidth), (window.innerHeight - curMouse.y) * (canvas.height / window.innerHeight));
+
+        gl.drawArrays(gl.TRIANGLES, 0, 6);
+        requestAnimationFrame(render);
+      }
+      requestAnimationFrame(render);
+    }
+
+    function init2DFallback(canvas) {
+      const ctx = canvas.getContext('2d');
+      let phase = 0;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#040811';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const waves = [
+          { color: 'rgba(255, 216, 107, 0.25)', amp: 35, freq: 0.003, speed: 0.02 },
+          { color: 'rgba(0, 242, 254, 0.22)', amp: 28, freq: 0.004, speed: -0.018 },
+          { color: 'rgba(16, 185, 129, 0.28)', amp: 45, freq: 0.002, speed: 0.015 }
+        ];
+
+        waves.forEach(w => {
+          ctx.beginPath();
+          ctx.strokeStyle = w.color;
+          ctx.lineWidth = 2.5;
+          for (let x = 0; x < canvas.width; x += 4) {
+            const y = canvas.height * 0.5 + Math.sin(x * w.freq + phase * w.speed) * w.amp;
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+        });
+
+        phase += 1;
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    /* Sculpted Cursor Glow Tracker */
+    document.addEventListener('pointermove', (e) => {
+      const cards = document.querySelectorAll('.glow-card, .bento-card, .calculator-card, .agent-unlocked-card, .agent-locked-card, .pricing-card, .affiliate-section-card');
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+
+    /* GSAP & Lenis Setup */
+    function initScrollAndAnimations() {
+      let lenis = null;
+      if (typeof Lenis !== 'undefined') {
+        try {
+          lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            smoothWheel: true,
+          });
+          function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+          }
+          requestAnimationFrame(raf);
+        } catch (err) {}
+      }
+
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        try {
+          gsap.registerPlugin(ScrollTrigger);
+          if (lenis) {
+            lenis.on('scroll', ScrollTrigger.update);
+            gsap.ticker.add((time) => {
+              lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+          }
+
+          gsap.utils.toArray('.bento-card, .pricing-card').forEach((card) => {
+            gsap.fromTo(card, 
+              { y: 30, opacity: 0.8 },
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: 'power2.out',
+                scrollTrigger: {
+                  trigger: card,
+                  start: 'top 88%',
+                  toggleActions: 'play none none none'
+                }
+              }
+            );
+          });
+        } catch (err) {}
+      }
+    }
+
     /* Initialize everything on load */
     window.addEventListener('DOMContentLoaded', () => {
+      initWebGLEngine();
+      initScrollAndAnimations();
+      document.querySelectorAll('.wa-audio-player').forEach(initWaPlayer);
+
       switchNiche('delivery');
       updateCalculator();
       // First toast after 4s

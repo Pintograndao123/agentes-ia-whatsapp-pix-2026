@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pintograndao123.github.io/agentes-ia-whatsapp-pix-2026/sitemap.xml
